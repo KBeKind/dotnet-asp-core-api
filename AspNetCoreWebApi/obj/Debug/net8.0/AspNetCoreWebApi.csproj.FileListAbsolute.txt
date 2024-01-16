@@ -103,3 +103,4 @@ C:\Users\kyler\Desktop\DOTNET-PROJECTS\asp-core-web-api\AspNetCoreWebApi\AspNetC
 C:\Users\kyler\Desktop\DOTNET-PROJECTS\asp-core-web-api\AspNetCoreWebApi\AspNetCoreWebApi\bin\Debug\net8.0\MySqlConnector.dll
 C:\Users\kyler\Desktop\DOTNET-PROJECTS\asp-core-web-api\AspNetCoreWebApi\AspNetCoreWebApi\bin\Debug\net8.0\Pomelo.EntityFrameworkCore.MySql.dll
 C:\Users\kyler\Desktop\DOTNET-PROJECTS\asp-core-web-api\AspNetCoreWebApi\AspNetCoreWebApi\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\kyler\Desktop\DOTNET-PROJECTS\asp-core-web-api\AspNetCoreWebApi\AspNetCoreWebApi\obj\Debug\net8.0\AspNetCoreWebApi.sourcelink.json
