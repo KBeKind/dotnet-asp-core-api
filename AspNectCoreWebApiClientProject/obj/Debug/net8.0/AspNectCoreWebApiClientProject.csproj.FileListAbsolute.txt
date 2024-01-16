@@ -227,9 +227,6 @@ C:\Users\kyler\Desktop\DOTNET-PROJECTS\asp-core-web-api\AspNetCoreWebApi\AspNect
 C:\Users\kyler\Desktop\DOTNET-PROJECTS\asp-core-web-api\AspNetCoreWebApi\AspNectCoreWebApiClientProject\obj\Debug\net8.0\AspNectCoreWebApiClientProject.pdb
 C:\Users\kyler\Desktop\DOTNET-PROJECTS\asp-core-web-api\AspNetCoreWebApi\AspNectCoreWebApiClientProject\obj\Debug\net8.0\AspNectCoreWebApiClientProject.genruntimeconfig.cache
 C:\Users\kyler\Desktop\DOTNET-PROJECTS\asp-core-web-api\AspNetCoreWebApi\AspNectCoreWebApiClientProject\obj\Debug\net8.0\ref\AspNectCoreWebApiClientProject.dll
-C:\Users\kyler\Desktop\DOTNET-PROJECTS\asp-core-web-api\AspNetCoreWebApi\AspNectCoreWebApiClientProject\bin\Debug\net8.0\clientapp\package-lock.json
-C:\Users\kyler\Desktop\DOTNET-PROJECTS\asp-core-web-api\AspNetCoreWebApi\AspNectCoreWebApiClientProject\bin\Debug\net8.0\clientapp\package.json
-C:\Users\kyler\Desktop\DOTNET-PROJECTS\asp-core-web-api\AspNetCoreWebApi\AspNectCoreWebApiClientProject\bin\Debug\net8.0\clientapp\public\manifest.json
 C:\Users\kyler\Desktop\DOTNET-PROJECTS\asp-core-web-api\AspNetCoreWebApi\AspNectCoreWebApiClientProject\bin\Debug\net8.0\Microsoft.AspNetCore.SpaServices.Extensions.dll
 C:\Users\kyler\Desktop\DOTNET-PROJECTS\asp-core-web-api\AspNetCoreWebApi\AspNectCoreWebApiClientProject\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
 C:\Users\kyler\Desktop\DOTNET-PROJECTS\asp-core-web-api\AspNetCoreWebApi\AspNectCoreWebApiClientProject\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
@@ -238,3 +235,4 @@ C:\Users\kyler\Desktop\DOTNET-PROJECTS\asp-core-web-api\AspNetCoreWebApi\AspNect
 C:\Users\kyler\Desktop\DOTNET-PROJECTS\asp-core-web-api\AspNetCoreWebApi\AspNectCoreWebApiClientProject\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
 C:\Users\kyler\Desktop\DOTNET-PROJECTS\asp-core-web-api\AspNetCoreWebApi\AspNectCoreWebApiClientProject\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 C:\Users\kyler\Desktop\DOTNET-PROJECTS\asp-core-web-api\AspNetCoreWebApi\AspNectCoreWebApiClientProject\bin\Debug\net8.0\Microsoft.JSInterop.dll
+C:\Users\kyler\Desktop\DOTNET-PROJECTS\asp-core-web-api\AspNetCoreWebApi\AspNectCoreWebApiClientProject\obj\Debug\net8.0\AspNectCoreWebApiClientProject.sourcelink.json
