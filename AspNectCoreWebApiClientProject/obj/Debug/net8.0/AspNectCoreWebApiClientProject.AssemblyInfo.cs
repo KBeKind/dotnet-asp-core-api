@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AspNectCoreWebApiClientProject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3effce1327eabc9f1afa78899e1622e36b9104da")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7b60c3598158fd722c22f9e59f13471b784f19e2")]
 [assembly: System.Reflection.AssemblyProductAttribute("AspNectCoreWebApiClientProject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AspNectCoreWebApiClientProject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

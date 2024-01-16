@@ -43,13 +43,13 @@ namespace AspNetCoreWebApi.Controllers
         [HttpGet("{id}")]
         public Product GetProduct(int id)
         {
-         
-                return _context.Products.Find(id);
-           
+
+            return _context.Products.Find(id);
+
         }
 
 
-        [HttpPut("{id}")]
+        [HttpPut("update/{id}")]
         public IActionResult UpdateProduct(int id, Product product)
         {
             if (id != product.Id || !ModelState.IsValid)
@@ -70,7 +70,7 @@ namespace AspNetCoreWebApi.Controllers
         }
 
 
-        [HttpDelete("{id}")]
+        [HttpDelete("delete/{id}")]
         public IActionResult DeleteProduct(int id)
         {
             var product = _context.Products.Find(id);
@@ -91,6 +91,22 @@ namespace AspNetCoreWebApi.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
+
+        [HttpGet("price/search")] // Custom route for searching products by price
+        public IEnumerable<Product> SearchProductsByPrice([FromQuery] float price)
+        {
+            // Custom route logic to search for products by price
+            // You can use the 'price' parameter to filter products
+            // Replace with your actual logic
+
+            var lowerBound = price - 10;
+            var upperBound = price + 10;
+
+            var productsInRange = _context.Products.Where(p => p.Price >= lowerBound && p.Price <= upperBound).ToList();
+
+            return productsInRange;
+        }
+
 
     }
 }
