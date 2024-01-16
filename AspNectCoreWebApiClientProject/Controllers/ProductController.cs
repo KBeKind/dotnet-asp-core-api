@@ -2,20 +2,25 @@
 using AspNectCoreWebApiClientProject.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AspNectCoreWebApiClientProject.Controllers
 {
     public class ProductController : Controller
     {
+        private readonly string apiBaseUrl = "http://localhost:5013/api/Product"; // Updated API base URL
+
         // GET: Product
         public async Task<ActionResult> Index()
         {
-
             List<Product> products = new List<Product>();
-            using(var client = new HttpClient())
+            using (var client = new HttpClient())
             {
-                using (var response = await client.GetAsync("http://localhost:5013/api/Product"))
+                using (var response = await client.GetAsync(apiBaseUrl)) // Use the updated API base URL
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
                     products = JsonConvert.DeserializeObject<List<Product>>(apiResponse);
@@ -27,11 +32,10 @@ namespace AspNectCoreWebApiClientProject.Controllers
         // GET: Product/Details/5
         public async Task<ActionResult> Details(int id)
         {
-
             var product = new Product();
             using (var client = new HttpClient())
             {
-                using (var response = await client.GetAsync("http://localhost:5013/api/Product/" + id.ToString()))
+                using (var response = await client.GetAsync($"{apiBaseUrl}/{id}")) // Use the updated API base URL
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
                     product = JsonConvert.DeserializeObject<Product>(apiResponse);
@@ -56,7 +60,7 @@ namespace AspNectCoreWebApiClientProject.Controllers
                 using (var client = new HttpClient())
                 {
                     var content = new StringContent(JsonConvert.SerializeObject(product), Encoding.UTF8, "application/json");
-                    var response = await client.PostAsync("http://localhost:5013/api/Product", content);
+                    var response = await client.PostAsync(apiBaseUrl, content); // Use the updated API base URL
 
                     if (response.IsSuccessStatusCode)
                     {
@@ -93,14 +97,13 @@ namespace AspNectCoreWebApiClientProject.Controllers
             return View(product);
         }
 
-
         // GET: Product/Edit/5
-        public async Task<ActionResult> Edit(int id)        {
-
+        public async Task<ActionResult> Edit(int id)
+        {
             var product = new Product();
             using (var client = new HttpClient())
             {
-                using (var response = await client.GetAsync("http://localhost:5013/api/Product/" + id.ToString()))
+                using (var response = await client.GetAsync($"{apiBaseUrl}/{id}")) // Use the updated API base URL
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
                     product = JsonConvert.DeserializeObject<Product>(apiResponse);
@@ -108,8 +111,6 @@ namespace AspNectCoreWebApiClientProject.Controllers
             }
 
             return View(product);
-
-       
         }
 
         // POST: Product/Edit/5
@@ -122,7 +123,7 @@ namespace AspNectCoreWebApiClientProject.Controllers
                 using (var client = new HttpClient())
                 {
                     var content = new StringContent(JsonConvert.SerializeObject(product), Encoding.UTF8, "application/json");
-                    var response = await client.PutAsync($"http://localhost:5013/api/Product/{id}", content);
+                    var response = await client.PutAsync($"{apiBaseUrl}/update/{id}", content); // Use the updated API base URL
 
                     if (response.IsSuccessStatusCode)
                     {
@@ -165,7 +166,7 @@ namespace AspNectCoreWebApiClientProject.Controllers
             var product = new Product();
             using (var client = new HttpClient())
             {
-                using (var response = await client.GetAsync("http://localhost:5013/api/Product/" + id.ToString()))
+                using (var response = await client.GetAsync($"{apiBaseUrl}/{id}")) // Use the updated API base URL
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
                     product = JsonConvert.DeserializeObject<Product>(apiResponse);
@@ -173,10 +174,8 @@ namespace AspNectCoreWebApiClientProject.Controllers
             }
 
             return View(product);
-
         }
 
-    
         // POST: Product/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -186,7 +185,7 @@ namespace AspNectCoreWebApiClientProject.Controllers
             {
                 using (var client = new HttpClient())
                 {
-                    var response = await client.DeleteAsync($"http://localhost:5013/api/Product/{id}");
+                    var response = await client.DeleteAsync($"{apiBaseUrl}/delete/{id}"); // Use the updated API base URL
 
                     if (response.IsSuccessStatusCode)
                     {
@@ -200,5 +199,32 @@ namespace AspNectCoreWebApiClientProject.Controllers
             }
             return RedirectToAction(nameof(Index));
         }
+
+
+        [HttpGet]
+        public async Task<ActionResult> Search(float? price)
+        {
+            try
+            {
+                List<Product> products = new List<Product>();
+                using (var client = new HttpClient())
+                {
+                    using (var response = await client.GetAsync($"{apiBaseUrl}/price/search?price={price}"))
+                    {
+                        string apiResponse = await response.Content.ReadAsStringAsync();
+                        products = JsonConvert.DeserializeObject<List<Product>>(apiResponse);
+                    }
+                }
+                return View("Search", products);
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+            }
+            return View("Search", new List<Product>()); // Return an empty list in case of errors
+        }
+
+
+
     }
 }

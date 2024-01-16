@@ -9,6 +9,23 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+<div class="row">
+    <div class="col-md-4 border border-secondary">
+        <p>Search will search within 10 of the price you enter:</p>
+        <form asp-action="Search" method="get">
+            <div class="input-group">
+                
+                <input type="text" name="price" class="form-control" placeholder="Search by Price" />
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </div>
+        </form>
+        <br/>
+    </div>
+</div>
+
 <table class="table">
     <thead>
         <tr>
